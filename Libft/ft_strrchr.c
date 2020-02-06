@@ -6,7 +6,7 @@
 /*   By: vnascime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 17:07:37 by vnascime          #+#    #+#             */
-/*   Updated: 2020/02/06 15:11:33 by vnascime         ###   ########.fr       */
+/*   Updated: 2020/02/06 16:59:02 by vnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strrchr(const char *s, int c)
 	const char	*a;
 
 	if (*s == 0)
-		return (NULL);
+		return ((char *)s);
 	while (*s)
 	{
 		if (*s == (char)c)

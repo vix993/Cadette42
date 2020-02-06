@@ -6,7 +6,7 @@
 /*   By: vnascime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 17:46:02 by vnascime          #+#    #+#             */
-/*   Updated: 2020/01/28 22:06:30 by vnascime         ###   ########.fr       */
+/*   Updated: 2020/02/06 18:27:34 by vnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*dsize;
 
-	dsize = malloc(count * size);
+	if (NULL == (dsize = malloc(count * size)))
+		return (NULL);
 	if (dsize == 0)
 		return (0);
 	ft_memset(dsize, 0, count * size);

@@ -6,7 +6,7 @@
 /*   By: vnascime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/26 20:05:03 by vnascime          #+#    #+#             */
-/*   Updated: 2020/02/05 16:35:23 by vnascime         ###   ########.fr       */
+/*   Updated: 2020/02/06 16:42:06 by vnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ char			*ft_strtrim(char const *s1, char const *set)
 	size_t		end;
 	char		*new;
 
-	end = ft_strlen(s1);
 	start = checkfront(s1, set);
 	i = 0;
 	end = checkback(s1, set);
@@ -72,12 +71,13 @@ char			*ft_strtrim(char const *s1, char const *set)
 		return (new);
 	}
 	else
-		new = (char *)ft_calloc((end - start + 1), sizeof(char));
+	{
+		if (NULL == (new = (char *)ft_calloc((end - start + 1), sizeof(char))))
+			return (NULL);
+	}
 	while (start < end)
 	{
-		new[i] = s1[start];
-		i++;
-		start++;
+		new[i++] = s1[start++];
 	}
 	return (new);
 }

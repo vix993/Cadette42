@@ -6,7 +6,7 @@
 /*   By: vnascime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 15:54:37 by vnascime          #+#    #+#             */
-/*   Updated: 2020/01/25 12:14:42 by vnascime         ###   ########.fr       */
+/*   Updated: 2020/02/06 17:28:18 by vnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,13 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 
 	i = 0;
 	res = 0;
-	while (i < n)
+	if (n == 0)
+		return (0);
+	while (i < n - 1 && s1[i] != 0 && s1[i] != 0)
 	{
-		res = res + ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		i++;
 	}
-	return (res);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

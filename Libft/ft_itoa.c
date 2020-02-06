@@ -6,7 +6,7 @@
 /*   By: vnascime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:00:09 by vnascime          #+#    #+#             */
-/*   Updated: 2020/02/05 14:06:09 by vnascime         ###   ########.fr       */
+/*   Updated: 2020/02/06 18:19:47 by vnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ char		*ft_itoa(int n)
 	f = (n < 0) ? -n : n;
 	size = (sign == '-') ? intlength(f) + 1 :
 		intlength(f);
-	new = (char *)ft_calloc(size, sizeof(char));
+	if (NULL == (new = (char *)ft_calloc(size, sizeof(char))))
+		return (NULL);
 	i = 0;
 	if (f == 0)
 		new[i] = '0';
