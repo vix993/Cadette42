@@ -6,7 +6,7 @@
 /*   By: vnascime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 19:18:43 by vnascime          #+#    #+#             */
-/*   Updated: 2020/02/05 19:53:46 by vnascime         ###   ########.fr       */
+/*   Updated: 2020/02/09 14:34:24 by vnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (lst != NULL)
-		new->next = *lst;
-	*lst = new;
+	t_list	*tmp;
+
+	tmp = (*lst);
+	(*lst) = new;
+	new->next = tmp;
 }

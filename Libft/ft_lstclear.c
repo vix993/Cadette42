@@ -6,7 +6,7 @@
 /*   By: vnascime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 20:40:11 by vnascime          #+#    #+#             */
-/*   Updated: 2020/02/06 14:11:36 by vnascime         ###   ########.fr       */
+/*   Updated: 2020/02/09 15:36:11 by vnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@
 void		ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list		*temp;
-
-	while(*lst)
+	if (lst)
 	{
-		temp = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		lst = &temp;
+		while(*lst)
+		{
+			temp = (*lst)->next;
+			ft_lstdelone(*lst, del);
+			lst = &temp;
+		}
 	}
 }

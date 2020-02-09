@@ -6,7 +6,7 @@
 #    By: vnascime <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/22 18:49:41 by vnascime          #+#    #+#              #
-#    Updated: 2020/02/06 14:26:08 by vnascime         ###   ########.fr        #
+#    Updated: 2020/02/09 15:13:17 by vnascime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,10 +29,10 @@ OBJECTS=ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isascii.o \
 		ft_putnbr_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_strmapi.o
 
 BONUS_SRCS=ft_lstadd_back.c ft_lstnew.c ft_lstadd_front.c ft_lstdelone.c \
-		   ft_lstclear.c ft_lstsize.c ft_lstlast.c
+		   ft_lstclear.c ft_lstsize.c ft_lstlast.c ft_lstiter.c ft_lstmap.c
 
 BONUS_OBJECTS=ft_lstadd_back.o ft_lstnew.o ft_lstadd_front.o ft_lstdelone.o \
-			  ft_lstclear.o ft_lstsize.o ft_lstlast.o
+			  ft_lstclear.o ft_lstsize.o ft_lstlast.o ft_lstiter.o ft_lstmap.o
 
 INCLUDES=libft.h
 
@@ -45,7 +45,7 @@ $(NAME): $(SRCS)
 
 bonus: $(BONUS_SRCS)
 	@gcc -Wall -Werror -Wextra -I$(INCLUDES) -c $(BONUS_SRCS)
-	@ar rc $(NAME) $(OBJECTS) $(BONUS_OBJECTS)
+	@ar rc $(NAME) $(BONUS_OBJECTS)
 	@ranlib $(NAME)
 
 clean:

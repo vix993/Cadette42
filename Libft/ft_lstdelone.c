@@ -6,7 +6,7 @@
 /*   By: vnascime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 20:27:50 by vnascime          #+#    #+#             */
-/*   Updated: 2020/02/06 14:07:03 by vnascime         ###   ########.fr       */
+/*   Updated: 2020/02/09 15:36:34 by vnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void		ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	del(lst);
+	del(lst->content);
 	free(lst);
 	lst = NULL;
 }

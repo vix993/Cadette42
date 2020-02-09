@@ -6,7 +6,7 @@
 /*   By: vnascime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:00:09 by vnascime          #+#    #+#             */
-/*   Updated: 2020/02/06 18:19:47 by vnascime         ###   ########.fr       */
+/*   Updated: 2020/02/07 12:55:40 by vnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ static void	rev(char *s)
 	int		f;
 	char	tmp;
 
-	f = ft_strlen(s) - 1;
+	f = ft_strlen(s);
 	c = 0;
 	while (c < f)
 	{
 		tmp = s[c];
-		s[c] = s[f];
-		s[f] = tmp;
+		s[c] = s[f - 1];
+		s[f - 1] = tmp;
 		c++;
 		f--;
 	}
@@ -52,12 +52,11 @@ char		*ft_itoa(int n)
 	int				size;
 	char			*new;
 
-	f = 0;
 	sign = (n < 0) ? '-' : 0;
 	f = (n < 0) ? -n : n;
 	size = (sign == '-') ? intlength(f) + 1 :
 		intlength(f);
-	if (NULL == (new = (char *)ft_calloc(size, sizeof(char))))
+	if (NULL == (new = (char *)ft_calloc(size + 1, sizeof(char))))
 		return (NULL);
 	i = 0;
 	if (f == 0)
