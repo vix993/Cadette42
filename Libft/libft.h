@@ -6,7 +6,7 @@
 /*   By: vnascime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 21:50:25 by vnascime          #+#    #+#             */
-/*   Updated: 2020/02/09 15:21:09 by vnascime         ###   ########.fr       */
+/*   Updated: 2020/02/09 16:11:13 by vnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ typedef struct		s_list
 
 t_list				*ft_lstnew(void *content);
 t_list				*ft_lstlast(t_list *lst);
-t_list				*ft_lstmap(t_list *lst,
-		void (*f)(void *), void(*del)(void *));
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
+		void (*del)(void *));
 void				ft_lstadd_front(t_list **lst, t_list *new);
 void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstdelone(t_list *lst, void (*del)(void *));

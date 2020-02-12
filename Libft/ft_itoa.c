@@ -6,7 +6,7 @@
 /*   By: vnascime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:00:09 by vnascime          #+#    #+#             */
-/*   Updated: 2020/02/07 12:55:40 by vnascime         ###   ########.fr       */
+/*   Updated: 2020/02/11 19:07:04 by vnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	rev(char *s)
 	}
 }
 
-static int	intlength(int size)
+static int	intlength(unsigned int size)
 {
 	int		l;
 

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vnascime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/25 20:17:16 by vnascime          #+#    #+#             */
-/*   Updated: 2020/02/07 14:13:48 by vnascime         ###   ########.fr       */
+/*   Created: 2020/02/11 18:34:12 by vnascime          #+#    #+#             */
+/*   Updated: 2020/02/11 20:39:28 by vnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = start;
 	j = 0;
-	if (!s)
-		return (0);
+	if (!s || len <= 0 || start >= ft_strlen(s))
+		return (ft_strdup(""));
 	if (NULL == (new = (char *)ft_calloc((len + 1), sizeof(char))))
 		return (NULL);
 	if (len == 0)

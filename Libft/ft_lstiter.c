@@ -6,7 +6,7 @@
 /*   By: vnascime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 20:49:19 by vnascime          #+#    #+#             */
-/*   Updated: 2020/02/09 15:21:24 by vnascime         ###   ########.fr       */
+/*   Updated: 2020/02/09 17:39:17 by vnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,9 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list		temp;
-
-	temp = (*lst);
-	if (lst)
+	while (lst)
 	{
-		while(lst != NULL)
-		{
-			f(lst);
-			lst = lst->next;
-		}
+		f(lst->content);
+		lst = lst->next;
 	}
 }

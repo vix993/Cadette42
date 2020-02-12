@@ -6,7 +6,7 @@
 /*   By: vnascime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 18:58:09 by vnascime          #+#    #+#             */
-/*   Updated: 2020/02/06 14:12:50 by vnascime         ###   ########.fr       */
+/*   Updated: 2020/02/09 15:47:53 by vnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ int		ft_lstsize(t_list *lst)
 		lst = lst->next;
 		len++;
 	}
-	return (len);	
+	return (len);
 }

@@ -6,7 +6,7 @@
 /*   By: vnascime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 12:06:06 by vnascime          #+#    #+#             */
-/*   Updated: 2020/02/07 14:58:55 by vnascime         ###   ########.fr       */
+/*   Updated: 2020/02/11 17:11:45 by vnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,13 @@ char			**ft_split(char const *s, char c)
 	j = 0;
 	while (i < countstr(s, c) && countstr(s, c) != 0)
 	{
-		if (s[j] != c)
+		if (s[j] != c && s[j] != 0)
 		{
 			l = j;
-			while (s[j] != c)
+			while (s[j] != c && s[j] != 0)
 				j++;
-			new[i] = (char *)ft_calloc(j - l + 1, sizeof(char));
+			if (NULL == (new[i] = (char *)ft_calloc(j - l + 1, sizeof(char))))
+				return (NULL);
 			ft_memcpy(new[i], s + l, (j - l));
 			i++;
 		}
