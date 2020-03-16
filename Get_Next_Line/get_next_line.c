@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-//This function is responsible for for copying our wanted memory
+//This function is responsible for copying our wanted memory
 //We search for the \n or EOF in *s and attribute this memory to **line.
 //We then give the excess memory to tmp whose address we will assign to *s.
 
@@ -43,7 +43,7 @@ static int		append_line(char **s, char **line)
 }
 
 //This function helps output our return value. 0 when we finish reading
-//-1 for errors and 1 if we perform append_line fully..
+//-1 for errors and 1 if we perform append_line fully.
 
 static int		output(char **s, char **line, int ret, int fd)
 {
@@ -61,7 +61,7 @@ static int		output(char **s, char **line, int ret, int fd)
 
 //We dynamically allocate our static array using OPEN_MAX
 // and statically allocate our BufferSize dealing with high buffers
-//While we are reading we will init s[fd] and join it with buff until
+//While we are reading we will initialize s[fd] and join it with buff until
 //we find \n
 
 int				get_next_line(int fd, char **line)
